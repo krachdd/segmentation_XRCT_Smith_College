@@ -1,6 +1,10 @@
 # Segmentation/binarization code for XRCT data sets
 Segmentation/binarization code for XRCT data. Preparation of [poremaps](https://git.rwth-aachen.de/david.krach/poremaps) input data sets.
 
+Segmentation includes options for [median filtering](https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.median_filter.html)
+and [Multi-Otsu Thresholding](https://scikit-image.org/docs/0.25.x/auto_examples/segmentation/plot_multiotsu.html).
+
+
 ## License
 
 The solver is licensed under the terms and conditions of the MIT License version 3 or - at your option - any later
