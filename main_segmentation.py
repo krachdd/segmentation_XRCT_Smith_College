@@ -387,15 +387,15 @@ def _plot_single(a):
 
 
 # --- Configuration ---
-MATERIAL = 'CT_32' # 'CT_32' or 'B1_15'
+MATERIAL = 'B1_15' # 'CT_32' or 'B1_15'
 METHOD   = 'CORE' # 'CORE' or 'ANISO'
-BINARIZE = True
-DEBUG   = True
-PLOT    = True
+BINARIZE = False
+DEBUG   = False
+PLOT    = False
 MASKING = True
 MEDIAN_FILTER = True
-POREMAPS_DATA = False
-RESOLUTION = 'med' # 'low', 'med', 'high'
+POREMAPS_DATA = True
+RESOLUTION = 'high' # 'low', 'med', 'high'
 SLICE = 2 if DEBUG else 300
 VOL_THRESHOLD = 4*4*4
 
@@ -679,7 +679,7 @@ if POREMAPS_DATA:
                 print('No file written since effective porosity is zero.')
             else:
                 _imp_data_3d = np.array(_imp_data_3d, dtype=np.bool_)
-                filename    = f'{MATERIAL}_{METHOD}_dir{i}_{_imp_data_3d.shape[0]}_{_imp_data_3d.shape[1]}_{_imp_data_3d.shape[2]}_vs{res_vs[RESOLUTION]}_porosity{effective_porosity}.raw'
+                filename    = f'{MATERIAL}_{METHOD}_{RESOLUTION}_dir{i}_{_imp_data_3d.shape[0]}_{_imp_data_3d.shape[1]}_{_imp_data_3d.shape[2]}_vs{res_vs[RESOLUTION]}_porosity{effective_porosity}.raw'
                 export_raw(filename, _imp_data_3d)
                 input_fn    = create_input_file(filename, _imp_data_3d.shape, res_vs[RESOLUTION], eps = 1.0e-6, porosity = effective_porosity)
 
