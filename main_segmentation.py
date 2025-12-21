@@ -387,9 +387,9 @@ def _plot_single(a):
 
 
 # --- Configuration ---
-MATERIAL = 'B1_15' # 'CT_32' or 'B1_15'
-METHOD   = 'CORE' # 'CORE' or 'ANISO'
-BINARIZE = False
+MATERIAL = 'CT_32' # 'CT_32' or 'B1_15'
+METHOD   = 'ANISO' # 'CORE' or 'ANISO'
+BINARIZE = True
 DEBUG   = False
 PLOT    = False
 MASKING = True
@@ -405,67 +405,67 @@ VOL_THRESHOLD = 4*4*4
 
 if MATERIAL == 'B1_15':
     res_dirs = {
-            'low':  '00_entire_domain_low',    
-            'med':  '01_entire_domain_med',
+            # 'low':  '00_entire_domain_low',    
+            # 'med':  '01_entire_domain_med',
             'high': '02_entire_domain_high',
                }
-    res_vs  =  { # in millimeter
-            'low':  0.036150,
-            'med':  0.024930, 
-            'high': 0.010970, 
+    res_vs  =  { # in meter
+            # 'low': ,
+            # 'med': , 
+            'high': 16.1e-06, 
                }
     res_size = {
-            'low':  [628, 647],
-            'med':  [881, 910],
-            'high': [968, 968],
+            # 'low':  [628, 647],
+            # 'med':  [881, 910],
+            'high': [1432, 1388],
                }
     res_bound = {
-            'low': [[22,602], [22,602], [112,628]],
-            'med': [[26,890], [8,872], [152,902]],
-            'high': [[4,950], [4,950], [0,659]],
+            # 'low': [[22,602], [22,602], [112,628]],
+            # 'med': [[26,890], [8,872], [152,902]],
+            'high': [[40,1320], [36,1346], [202,1342]],
                }
     fname_prefix =  {
-            'low': 'B1_15_LowRes',
-            'med': 'B1_15_MidRes',
+            # 'low': 'B1_15_LowRes',
+            # 'med': 'B1_15_MidRes',
             'high': 'B1_15_HighRes',
                     }
     pm_aniso_lim = {
-            'low': [[90,490], [90,490]],
-            'med': [[131,731], [131,731]],
+            # 'low': [[90,490], [90,490]],
+            # 'med': [[131,731], [131,731]],
             'high': [[147,817], [147,817]],
     }
 
 
 elif MATERIAL == 'CT_32':
     res_dirs = {
-            'low':  '00_entire_domain_low',    
-            'med':  '01_entire_domain_med',
+            # 'low':  '00_entire_domain_low',    
+            # 'med':  '01_entire_domain_med',
             'high': '02_entire_domain_high',
                }
-    res_vs  =  { # in millimeter
-            'low':   0.033820,
-            'med':  0.023990, 
-            'high': 0.011260, 
+    res_vs  =  { # in meter
+            # 'low':   0.033820,
+            # 'med':  0.023990, 
+            'high': 14.2e-06, 
                }
     res_size = {
-            'low':  [663, 657],
-            'med':  [934, 934],
-            'high': [968, 968],
+            # 'low':  [663, 657],
+            # 'med':  [934, 934],
+            'high': [1600, 1626],
                }
     res_bound = {
-            'low': [[14,650], [6,642], [58,650]],
-            'med': [[18,918], [4,904], [84,842]],
-            'high': [[6,960], [6,960], [0,646]],
+            # 'low': [[14,650], [6,642], [58,650]],
+            # 'med': [[18,918], [4,904], [84,842]],
+            'high': [[26,1552], [26,1552], [112,1354]],
                }
     fname_prefix =  {
-            'low': 'CT_32_LowRes',
-            'med': 'CT_32_MidRes',
+            # 'low': 'CT_32_LowRes',
+            # 'med': 'CT_32_MidRes',
             'high': 'CT_32_HighRes',
                     }
     pm_aniso_lim = {
-            'low': [[100,536], [100,536]],
-            'med': [[140,760], [140,760]],
-            'high': [[145,809], [145,809]],
+            # 'low': [[100,536], [100,536]],
+            # 'med': [[140,760], [140,760]],
+            'high': [[236,1316], [236,1316]],
     }
 else:
     raise ValueError('MATERIAL not avail.')
