@@ -387,7 +387,7 @@ def _plot_single(a):
 
 
 # --- Configuration ---
-MATERIAL = 'CT_32' # 'CT_32' or 'B1_15'
+MATERIAL = 'B1_15' # 'CT_32' or 'B1_15'
 METHOD   = 'ANISO' # 'CORE' or 'ANISO'
 BINARIZE = True
 DEBUG   = False
@@ -432,7 +432,7 @@ if MATERIAL == 'B1_15':
     pm_aniso_lim = {
             # 'low': [[90,490], [90,490]],
             # 'med': [[131,731], [131,731]],
-            'high': [[147,817], [147,817]],
+            'high': [[188,1132], [188,1132]],
     }
 
 
