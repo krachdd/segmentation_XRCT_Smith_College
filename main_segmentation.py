@@ -689,7 +689,7 @@ if POREMAPS_DATA:
         imp_data_3d = eliminate_unconnected_porespace(imp_data_3d)
         imp_data_3d = np.array(imp_data_3d, dtype=np.bool_)
         
-        filename    = f'{MATERIAL}_{METHOD}_{imp_data_3d.shape[0]}_{imp_data_3d.shape[1]}_{imp_data_3d.shape[2]}_vs{res_vs[RESOLUTION]}.raw'
+        filename    = f'{MATERIAL}_{METHOD}_{RESOLUTION}_{imp_data_3d.shape[0]}_{imp_data_3d.shape[1]}_{imp_data_3d.shape[2]}_vs{res_vs[RESOLUTION]}.raw'
         export_raw(filename, imp_data_3d)
         
         # Use effective porosity from xml file
