@@ -439,6 +439,7 @@ if MATERIAL == 'B1_15':
             # 'med': [[131,731], [131,731]],
             'high': [[188,1132], [188,1132]],
     }
+    skewnes_corr = 40
 
 
 elif MATERIAL == 'CT_32':
@@ -472,6 +473,7 @@ elif MATERIAL == 'CT_32':
             # 'med': [[140,760], [140,760]],
             'high': [[236,1316], [236,1316]],
     }
+    skewnes_corr = 24
 else:
     raise ValueError('MATERIAL not avail.')
 
@@ -526,8 +528,9 @@ if BINARIZE:
 
     if PLOT: _plot_comp(imp_data_3d[:, :, SLICE], imp_data_median_3d[:, :, SLICE])
 
+
     # Create mask for the first slice (assuming all slices have the same dimensions)
-    mask = create_mask(int(imp_data_median_3d.shape[0]/2), imp_data_median_3d[:, :, 0], int(imp_data_median_3d.shape[0]/2), int(imp_data_median_3d.shape[1]/2))
+    mask = create_mask(int(imp_data_median_3d.shape[0]/2) - skewnes_corr, imp_data_median_3d[:, :, 0], int(imp_data_median_3d.shape[0]/2), int(imp_data_median_3d.shape[1]/2))
 
     # --- Thresholding ---
     # Initialize 3D array for binarized data
