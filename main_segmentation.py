@@ -387,9 +387,9 @@ def _plot_single(a):
 
 
 # --- Configuration ---
-if sys.argv[1] == 0:
+if int(sys.argv[1]) == 0:
     MATERIAL = 'B1_15' # 'CT_32' or 'B1_15'
-elif sys.argv[1] == 1:
+elif int(sys.argv[1]) == 1:
     MATERIAL = 'CT_32' # 'CT_32' or 'B1_15'
 else: 
     raise ValueError('False Material value: Use 0 or 1. ')
